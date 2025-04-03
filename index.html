@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAKE REVIEW DETECTOR</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i>
+                <h1>FAKE REVIEW DETECTOR</h1>
+            </div>
+            <p>Advanced AI-powered tool to detect Real vs Fake reviews</p>
+            <div class="dataset-info">
+                <strong>Dataset:</strong> 20K genuine human reviews + 20K computer-generated fake reviews
+            </div>
+        </header>
+        
+        <main>
+            <div class="card review-form">
+                <h2><i class="fas fa-comment-dots"></i> Enter Review</h2>
+                <textarea id="reviewText" placeholder="Paste the review text here..."></textarea>
+                <div class="button-container">
+                    <button id="checkButton"><i class="fas fa-search"></i> Analyze Review</button>
+                    <button id="clearButton" class="secondary"><i class="fas fa-eraser"></i> Clear</button>
+                </div>
+            </div>
+            
+            <div class="result-container" id="resultContainer">
+                <div class="card result-box">
+                    <h2><i class="fas fa-chart-pie"></i> Analysis Result</h2>
+                    <div class="loader" id="loader">
+                        <div class="spinner"></div>
+                        <p>Analyzing review...</p>
+                    </div>
+                    <div id="resultDisplay">
+                        <!-- Results ivide kanum -->
+                    </div>
+                    <div id="confidenceScore"></div>
+                    <div id="analysisDetails"></div>
+                    
+                    <div class="model-performance" id="modelPerformance">
+                        <h3>Algorithm Performance</h3>
+                        <div class="performance-bars" id="performanceBars">
+                            <!-- Algorithm performance bars ivide add cheyyuka -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card info-box">
+                <h2><i class="fas fa-info-circle"></i> How It Works</h2>
+                <p>Our system uses four machine learning algorithms to analyze reviews:</p>
+                <div class="algorithm-info">
+                    <div class="algorithm-card">
+                        <i class="fas fa-brain"></i>
+                        <h3>Naïve Bayes</h3>
+                        <p>Probabilistic classifier based on Bayes' theorem, effective for text classification.</p>
+                    </div>
+                    <div class="algorithm-card">
+                        <i class="fas fa-project-diagram"></i>
+                        <h3>Linear SVC</h3>
+                        <p>Linear Support Vector Classification, efficient for large-scale text classification.</p>
+                    </div>
+                    <div class="algorithm-card">
+                        <i class="fas fa-vector-square"></i>
+                        <h3>SVM</h3>
+                        <p>Support Vector Machine with RBF kernel, captures non-linear relationships in text.</p>
+                    </div>
+                    <div class="algorithm-card">
+                        <i class="fas fa-tree"></i>
+                        <h3>Random Forest</h3>
+                        <p>Ensemble learning method using multiple decision trees for robust classification.</p>
+                    </div>
+                </div>
+                <p class="info-footer">The final prediction is determined by ensemble voting from all algorithms, providing more accurate results than any single algorithm.</p>
+            </div>
+            
+            <div class="card dataset-card">
+                <h2><i class="fas fa-database"></i> Dataset Statistics</h2>
+                <div class="dataset-stats">
+                    <div class="stat-card">
+                        <h3>Total Reviews</h3>
+                        <div class="stat-value">40,526</div>
+                        <div class="stat-description">Analyzed for training</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Genuine Reviews</h3>
+                        <div class="stat-value">20,232</div>
+                        <div class="stat-description">Human-written</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Fake Reviews</h3>
+                        <div class="stat-value">20,294</div>
+                        <div class="stat-description">Computer-generated</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Accuracy</h3>
+                        <div class="stat-value" id="modelAccuracy">89.4%</div>
+                        <div class="stat-description">Overall model performance</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <div class="footer-content">
+                <p><i class="far fa-copyright"></i>FAKE REVIEW DETECTOR</p>
+                <p><i class="fas fa-exclamation-circle"></i> Disclaimer: This is a demonstration tool and may not be 100% accurate</p>
+            </div>
+        </footer>
+    </div>
+    
+    <div class="theme-toggle" id="themeToggle">
+        <i class="fas fa-moon"></i>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+<!-- Model status sectionil train button remove cheyyuka -->
+<div class="model-status">
+    <span class="status-indicator trained" id="statusIndicator"></span>
+    <span id="statusText">Checking model status...</span>
+    <!-- Train button remove cheyyuka -->
+</div>
+
+<!-- Training modal section exist cheyyunnenkil remove cheyyuka -->
+<!-- Any other training-related UI elements remove cheyyuka -->
+<!-- Body contentinu adyam ivide add cheyyuka -->
+<div id="connectionStatus" class="checking">Checking connection to backend server...</div>

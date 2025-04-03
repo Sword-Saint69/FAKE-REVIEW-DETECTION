@@ -1,0 +1,1 @@
+{"training_date": "2025-04-03 18:09:46", "dataset_size": 40526, "genuine_reviews": 20232, "fake_reviews": 20294, "feature_count": 5000, "average_accuracy": 0.8940291142363681, "best_model": "linear_svc", "best_accuracy": 0.9365901801134962, "is_sample": false}
